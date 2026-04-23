@@ -224,6 +224,7 @@ textarea {
 }
 
 input[type="submit"] {
+  
   margin-top: 18px;
   background: linear-gradient(135deg, #0b6623, #38a169);
   color: white;
@@ -236,4 +237,10 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   opacity: 0.95;
+}
+
+
+/* Remove hero image */
+.hero {
+  background: #0b6623 !important;
 }
