@@ -2,46 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>Gallery</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-        <a href="custom.html">Services</a>
-    </nav>
+    <div class="container">
+        <h1>Gallery</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="custom.html">Services</a>
+        </nav>
+    </div>
 </header>
 
-<table border="1">
-    <tr>
-        <th>Image</th>
-        <th>Project Name</th>
-        <th>Category</th>
-    </tr>
+<section class="container">
+    <h2>Recent projects (photo examples)</h2>
+    <p class="subtext">A quick look at the kind of work we do—design, maintenance, and upgrades.</p>
 
-    <tr>
-        <td><img src="https://via.placeholder.com/100" alt="Modern Garden"></td>
-        <td>Modern Garden</td>
-        <td>Design</td>
-    </tr>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Project Name</th>
+            <th>Category</th>
+        </tr>
 
-    <tr>
-        <td><img src="https://via.placeholder.com/100" alt="Lawn Upgrade"></td>
-        <td>Lawn Upgrade</td>
-        <td>Lawn Care</td>
-    </tr>
+        <tr>
+            <td><img class="gallery-thumb" src="https://picsum.photos/seed/frontyard/420/260" alt="Front yard landscaping"></td>
+            <td>Front Yard Refresh</td>
+            <td>Lawn Care</td>
+        </tr>
 
-    <tr>
-        <td><img src="https://via.placeholder.com/100" alt="Tree Trim"></td>
-        <td>Tree Trim</td>
-        <td>Maintenance</td>
-    </tr>
-</table>
+        <tr>
+            <td><img class="gallery-thumb" src="https://picsum.photos/seed/backyard/420/260" alt="Backyard garden design"></td>
+            <td>Backyard Garden</td>
+            <td>Garden Design</td>
+        </tr>
+
+        <tr>
+            <td><img class="gallery-thumb" src="https://picsum.photos/seed/trim/420/260" alt="Tree trimming"></td>
+            <td>Clean Trim</td>
+            <td>Tree &amp; Shrub Care</td>
+        </tr>
+
+        <tr>
+            <td><img class="gallery-thumb" src="https://picsum.photos/seed/lighting/420/260" alt="Outdoor lighting"></td>
+            <td>Outdoor Lighting</td>
+            <td>Lighting</td>
+        </tr>
+
+        <tr>
+            <td><img class="gallery-thumb" src="https://picsum.photos/seed/patio/420/260" alt="Patio landscaping"></td>
+            <td>Patio Upgrade</td>
+            <td>Hardscape</td>
+        </tr>
+
+        <tr>
+            <td><img class="gallery-thumb" src="https://picsum.photos/seed/seasonal/420/260" alt="Seasonal cleanup"></td>
+            <td>Seasonal Cleanup</td>
+            <td>Maintenance</td>
+        </tr>
+    </table>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Bloom Valley Landscaping</p>
+    </div>
+</footer>
 
 </body>
 </html>
