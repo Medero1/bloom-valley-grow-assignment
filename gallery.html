@@ -36,32 +36,33 @@
       <tr>
         <td>Lawn Care Refresh</td>
         <td>Lawn Care</td>
-        <td><button onclick="addToCart()">Add to Cart</button></td>
+        <td><button onclick="addToCart('Lawn Care Refresh')">Add to Cart</button></td>
       </tr>
       <tr>
         <td>Garden Design</td>
         <td>Planting</td>
-        <td><button onclick="addToCart()">Add to Cart</button></td>
+        <td><button onclick="addToCart('Garden Design')">Add to Cart</button></td>
       </tr>
       <tr>
-        <td>Tree &amp; Shrub Care</td>
+        <td>Tree & Shrub Care</td>
         <td>Maintenance</td>
-        <td><button onclick="addToCart()">Add to Cart</button></td>
+        <td><button onclick="addToCart('Tree & Shrub Care')">Add to Cart</button></td>
       </tr>
       <tr>
         <td>Outdoor Lighting</td>
         <td>Lighting</td>
-        <td><button onclick="addToCart()">Add to Cart</button></td>
+        <td><button onclick="addToCart('Outdoor Lighting')">Add to Cart</button></td>
       </tr>
       <tr>
         <td>Seasonal Cleanup</td>
         <td>Maintenance</td>
-        <td><button onclick="addToCart()">Add to Cart</button></td>
+        <td><button onclick="addToCart('Seasonal Cleanup')">Add to Cart</button></td>
       </tr>
     </tbody>
   </table>
 
   <div class="cart-actions">
+    <button onclick="viewCart()">View Cart</button>
     <button onclick="clearCart()">Clear Cart</button>
     <button onclick="processOrder()">Process Order</button>
   </div>
@@ -74,15 +75,46 @@
 </footer>
 
 <script>
-function addToCart() {
-  alert("Item added to the cart.");
-}
-function clearCart() {
-  alert("Cart cleared.");
-}
-function processOrder() {
-  alert("Thank you for your order.");
-}
+  function getCart() {
+    const stored = sessionStorage.getItem('cart');
+    return stored ? JSON.parse(stored) : [];
+  }
+
+  function saveCart(cart) {
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function addToCart(item) {
+    const cart = getCart();
+    cart.push(item);
+    saveCart(cart);
+    alert('Item added to the cart.');
+  }
+
+  function viewCart() {
+    const cart = getCart();
+    if (cart.length === 0) {
+      alert('Your cart is empty.');
+      return;
+    }
+
+    let message = 'Cart Items:\n';
+    for (let i = 0; i < cart.length; i++) {
+      message += (i + 1) + '. ' + cart[i] + '\n';
+    }
+
+    alert(message);
+  }
+
+  function clearCart() {
+    sessionStorage.removeItem('cart');
+    alert('Cart cleared.');
+  }
+
+  function processOrder() {
+    sessionStorage.removeItem('cart');
+    alert('Thank you for your order.');
+  }
 </script>
 </body>
 </html>
