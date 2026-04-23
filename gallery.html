@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
@@ -22,49 +22,49 @@
 
 <section class="container">
   <h2>Recent Projects</h2>
-  <p>Here are a few of the yards and gardens we have worked on recently.</p>
+  <p>Here are a few of the yards and gardens we've worked on recently.</p>
 
   <table class="gallery-table">
     <thead>
       <tr>
-        <th>Project Name</th>
+        <th>Project</th>
         <th>Category</th>
-        <th>Description</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Lawn Care Refresh</td>
         <td>Lawn Care</td>
-        <td>Weekly mowing, edging, and cleanup.</td>
+        <td><button onclick="addToCart()">Add to Cart</button></td>
       </tr>
       <tr>
         <td>Garden Design</td>
         <td>Planting</td>
-        <td>Color planning and bed layout.</td>
+        <td><button onclick="addToCart()">Add to Cart</button></td>
       </tr>
       <tr>
         <td>Tree &amp; Shrub Care</td>
         <td>Maintenance</td>
-        <td>Pruning and seasonal trimming.</td>
+        <td><button onclick="addToCart()">Add to Cart</button></td>
       </tr>
       <tr>
         <td>Outdoor Lighting</td>
         <td>Lighting</td>
-        <td>Accent lighting for safety and style.</td>
+        <td><button onclick="addToCart()">Add to Cart</button></td>
       </tr>
       <tr>
         <td>Seasonal Cleanup</td>
         <td>Maintenance</td>
-        <td>Spring and fall debris removal.</td>
-      </tr>
-      <tr>
-        <td>Full Yard Transformation</td>
-        <td>Complete Service</td>
-        <td>Design + install + ongoing care.</td>
+        <td><button onclick="addToCart()">Add to Cart</button></td>
       </tr>
     </tbody>
   </table>
+
+  <div class="cart-actions">
+    <button onclick="clearCart()">Clear Cart</button>
+    <button onclick="processOrder()">Process Order</button>
+  </div>
 </section>
 
 <footer>
@@ -73,5 +73,16 @@
   </div>
 </footer>
 
+<script>
+function addToCart() {
+  alert("Item added to the cart.");
+}
+function clearCart() {
+  alert("Cart cleared.");
+}
+function processOrder() {
+  alert("Thank you for your order.");
+}
+</script>
 </body>
 </html>
