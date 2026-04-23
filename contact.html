@@ -1,67 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Contact</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel='stylesheet' href='style.css'>
 </head>
 <body>
 <header>
-  <div class="container">
+  <div class='container'>
     <h1>Bloom Valley Landscaping</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="custom.html">Services</a>
-      <a href="our-story.html">Our Story</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href='index.html'>Home</a>
+      <a href='gallery.html'>Gallery</a>
+      <a href='custom.html'>Services</a>
+      <a href='our-story.html'>Our Story</a>
+      <a href='contact.html' class='active'>Contact</a>
     </nav>
   </div>
 </header>
 
-<section class="container">
+<section class='container'>
   <h2>Send us a message</h2>
 
-  <form id="contactForm">
+  <form id='contactForm'>
     <fieldset>
       <legend>Send us a message</legend>
 
-      <label for="name">Name:</label><br>
-      <input id="name" type="text" required><br><br>
+      <label for='name'>Name:</label><br>
+      <input id='name' type='text' required><br><br>
 
-      <label for="email">Email:</label><br>
-      <input id="email" type="email" required><br><br>
+      <label for='email'>Email:</label><br>
+      <input id='email' type='email' required><br><br>
 
-      <label for="service">Service Needed:</label><br>
-      <select id="service" required>
-        <option value="">Select a service</option>
+      <label for='service'>Service Needed:</label><br>
+      <select id='service' required>
+        <option value=''>Select a service</option>
         <option>Lawn Care</option>
         <option>Garden Design</option>
-        <option>Tree &amp; Shrub Care</option>
+        <option>Tree & Shrub Care</option>
       </select><br><br>
 
-      <label for="message">Message:</label><br>
-      <textarea id="message" rows="4" cols="30" required></textarea><br><br>
+      <label for='message'>Message:</label><br>
+      <textarea id='message' rows='4' cols='30' required></textarea><br><br>
 
-      <input type="submit" value="Submit">
+      <input type='submit' value='Submit'>
     </fieldset>
   </form>
 </section>
 
 <footer>
-  <div class="container">
-    <p>© 2026 Bloom Valley Landscaping</p>
+  <div class='container'>
+    <p>&copy; 2026 Bloom Valley Landscaping</p>
   </div>
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      alert('Thank you for your message.');
-      e.preventDefault();
-    });
-  });
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value;
+
+  const order = { name, email, service, message };
+  localStorage.setItem('customerOrder', JSON.stringify(order));
+
+  alert('Thank you for your message.');
+});
 </script>
 </body>
 </html>
